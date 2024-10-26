@@ -53,7 +53,12 @@ private:
             if(!ec){
                 log_message("Received data: " + std::string(buffer->data(), bytes_transferred));
 
-                async_write(*socket, boost::asio::buffer(*buffer, bytes_transferred), [socket](boost::system::error_code, std::size_t){});
+                std::string response = "HTTP/1.0 200 OK\r\n"
+                                       "Content-Type: text/plain\r\n"
+                                       "\r\n"
+                                       "Hello, world";
+
+                async_write(*socket, boost::asio::buffer(response), [socket](boost::system::error_code, std::size_t){});
 
                 handle_client(socket);
             }else{
