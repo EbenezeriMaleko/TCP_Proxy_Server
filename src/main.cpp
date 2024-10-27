@@ -2,6 +2,8 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include <array>
+#include <memory>
 #include <fstream>
 #include <mutex>
 
@@ -21,16 +23,28 @@ public:
         accept_connections();
 
         for (int i = 0; i < thread_count_; i++) {
-            threads_.emplace_back([&]() { io_context_.run(); });
+            threads_.emplace_back([&]() { 
+                try
+                {
+                    io_context_.run();
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << "Exception in thread" << e.what() << '\n';
+                }
+            });
         }
 
         for (auto& thread : threads_) {
+            if(thread.joinable()){
             thread.join();
+            }
         }
     }
 
 private:
     void log_message(const std::string& message){
+        std::lock_guard<std::mutex> lock(log_mutex_);
         std::cout <<message <<std::endl;
     }
 
@@ -56,9 +70,16 @@ private:
                 std::string response = "HTTP/1.0 200 OK\r\n"
                                        "Content-Type: text/plain\r\n"
                                        "\r\n"
-                                       "Hello, world";
+                                       "Hello, world\r\n";
 
-                async_write(*socket, boost::asio::buffer(response), [socket](boost::system::error_code, std::size_t){});
+                async_write(*socket, boost::asio::buffer(response), [socket](boost::system::error_code write_ec, std::size_t){
+                    if(!write_ec) {
+                        socket->shutdown(tcp::socket::shutdown_send);
+                        socket->close();
+                    }else{
+                        std::cerr << "Error in write: " << write_ec.message() << std::endl;
+                    }
+                });
 
                 handle_client(socket);
             }else{
@@ -70,7 +91,8 @@ private:
     tcp::acceptor acceptor_;
     io_context& io_context_;
     int thread_count_;
-    std::vector<std::thread> threads_;  // Declare the threads vector
+    std::vector<std::thread> threads_;
+    std::mutex log_mutex_;
 };
 
 int main() {
