@@ -45,7 +45,17 @@ public:
 private:
     void log_message(const std::string& message){
         std::lock_guard<std::mutex> lock(log_mutex_);
+        
+        // Log to console
         std::cout <<message <<std::endl;
+
+        //Log to file
+        std::ofstream log_file("tcp_proxy_server.log", std::ios_base::app);
+        if(log_file.is_open()){
+            log_file << message << std::endl;
+        }else{
+            std::cerr << "Unable to open log file!" << std::endl;
+        }
     }
 
     void accept_connections() {
