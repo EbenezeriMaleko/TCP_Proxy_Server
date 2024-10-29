@@ -1,10 +1,23 @@
+# CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
 project(TCPProxyServer)
 
+#Set the CMP0167 policy
+cmake_policy(SET CMP0167 NEW)
+
+# Use C++17 standard
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Boost REQUIRED COMPONENTS system)
+# Include directories
+include_directories(include)
 
-add_executable(tcp_proxy_server src/main.cpp)
-target_link_libraries(tcp_proxy_server Boost::system pthread)
+# Boost Asio requires linking to pthread
+find_package(Boost REQUIRED)
+find_package(Threads REQUIRED)
+
+# Source files
+add_executable(TCPProxyServer src/main.cpp src/TCPProxyServer.cpp src/Logger.cpp)
+
+# Link libraries
+target_link_libraries(TCPProxyServer Boost::boost Threads::Threads)
 
