@@ -23998,3 +23998,18 @@ User-Agent: ApacheBench/2.3
 Accept: */*
 
 
+Received data: GET / HTTP/1.1
+User-Agent: PostmanRuntime/7.42.0
+Accept: */*
+Postman-Token: 51c61350-a1d7-48fa-81b9-de32e3c7ebaa
+Host: localhost:8000
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+
+Received data: hello, client
+
+Received data: hello, Daudi
+
+Received data: hello
+
