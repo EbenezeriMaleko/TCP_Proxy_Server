@@ -43,3 +43,8 @@ This project processes log files and saves the logs to a SQLite database.
 3. Ensure SQLite and Boost libraries are properly linked in the project settings.
 4. Build the project by selecting Build > Build Solution.
 5. Run the program by pressing Ctrl + F5.
+
+---
+
+## 2. TCP Proxy Server
+
