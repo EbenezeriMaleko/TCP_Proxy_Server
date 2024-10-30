@@ -1,0 +1,4 @@
+Error: Failed to connect to database
+Warning: Deprecated API usage detected
+Info: User logged in
+Debug: Starting the application
