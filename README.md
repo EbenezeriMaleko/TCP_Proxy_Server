@@ -1,4 +1,4 @@
-## C++ Interview Answers
+# C++ Interview Answers
 
 This repository contains several projects that demonstrate various programming concepts and techniques. Below are instructions on how to run each project in Linux (using Visual Studio Code) and Windows (using Visual Studio Community).
 
@@ -16,9 +16,9 @@ This repository contains several projects that demonstrate various programming c
 This project processes log files and saves the logs to a SQLite database.
 
 ### Prerequisites
-- C++ Compiler (g++)
-- SQLite library
-- Boost libraries (for threading and networking)
+- **C++ Compiler (g++)**
+- **SQLite library**
+- **Boost libraries** (for threading and networking)
 
 ### Instructions
 
@@ -125,4 +125,4 @@ You can use Postman or curl to test the server by sending requests to localhost 
 
 ### Log Output
 
-The server writes logs with details like thread ID and connection number to proxy_log.txt, which helps in tracking thread activity.
+The server writes logs with details like request sent and connection number to proxy_log.txt, which helps in tracking thread activity.
