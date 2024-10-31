@@ -1,4 +1,4 @@
-# C++ Interview Answers
+ju# C++ Interview Answers
 
 This repository contains several projects that demonstrate various programming concepts and techniques. Below are instructions on how to run each project in Linux (using Visual Studio Code) and Windows (using Visual Studio Community).
 
@@ -45,6 +45,35 @@ This project processes log files and saves the logs to a SQLite database.
 5. Run the program by pressing Ctrl + F5.
 
 ---
+# TCP Proxy Server
 
-## 2. TCP Proxy Server
+This project is a TCP Proxy Server built in C++ using Boost.Asio. It supports handling 1000 simultaneous connections, distributing connections over a thread pool, and logs details for each activity.
 
+## Features
+- **Handles up to 1000 simultaneous connections**
+- **Distributes connections across a 5-thread pool**
+- **Logs connection details to a log file**
+
+---
+
+## Requirements
+
+### Dependencies
+- **Boost.Asio** for asynchronous I/O.
+- **C++17** (or higher) compatible compiler.
+
+### Installation of Boost (if not already installed)
+- **Linux**: 
+  ```bash
+  sudo apt-get install -y libboost-all-dev
+
+### Running on Linux using vscode
+1. After cloning the repository 
+
+2. Change directory to tcp_proxy_server
+   ```bash
+   cd tcp_proxy_server
+
+3. Compile the code
+   ```bash
+   g++ -std=c++17 -pthread -o tcp_proxy_server          main.cpp -lboost_system
