@@ -126,3 +126,48 @@ You can use Postman or curl to test the server by sending requests to localhost 
 ### Log Output
 
 The server writes logs with details like request sent and connection number to proxy_log.txt, which helps in tracking thread activity.
+
+---
+
+# Message Fragmentation Library
+## Overview
+The Message Fragmentation Library is a C++ project that fragments a message into smaller parts and reassembles it, simulating network transmission. It includes:
+   - MessageFragmenter: For splitting a message into fragments of specified sizes.
+   - MessageAssembler: For reassembling fragments back into the original message.
+---
+
+## Features
+- Fragment large messages into smaller parts.
+- Simulate missing fragments.
+- Reassemble fragments into the original message, detecting missing parts.
+
+## Prerequisites
+ ### Linux
+ - Compiler: g++ or clang++ with (C++17 or higher).
+
+### Windows
+- Compiler:Visual Studio with MSVC compiler (C++17 or higher)
+
+## Build Instructions
+   ### Linux
+   1. Clone the repository
+      ```bash
+      git clone https://github.com/yourusername/message_fragmentation.git
+      cd message_fragmentation
+   2. Run the program
+      ```bash
+      ./test
+
+   ### Build with Visual Studio
+   - Open Visual Studio.
+
+   - Select Open Folder and open the message_fragmentation folder.
+
+   - Visual Studio should detect the CMakeLists.txt file and prompt to configure the project.
+
+   - Once configured, build the project by selecting Build > Build All.
+
+   ### Run the Program:
+
+   Go to the Output directory, typically found in Debug or Release depending on your build configuration.
+   Run the executable file.
