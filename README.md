@@ -78,40 +78,36 @@ This project is a TCP Proxy Server built in C++ using Boost.Asio. It supports ha
    ```bash
    ./tcp_proxy_server 
 
-### Running on windows (VSCommunity)
+### Running on Windows (VS Community)
 
 
 1. Install Visual Studio Community Edition:
 
-Make sure to include the "Desktop development with C++" workload.
-
-Add Boost headers by configuring include and lib directories.
+- Make sure to include the "Desktop development with C++" workload.
+- Add Boost headers by configuring include and lib directories.
 
 
 
 2. Open the Project:
 
-Open Visual Studio and create a new Console App project.
-
-Copy the main.cpp code into your project file.
+- Open Visual Studio and create a new Console App project.
+- Copy the **main.cpp** code into your project file.
 
 
 
 3. Configure Boost in Visual Studio:
 
-Go to Project Properties > C/C++ > General > Additional Include Directories and add the path to the Boost headers (e.g., C:\local\boost_1_76_0).
+- Go to **Project Properties > C/C++ > General >** Additional Include Directories and add the path to the Boost         headers(e.g., C:\local\boost_1_76_0).
 
-Go to Linker > General > Additional Library Directories and add the path to Boost libraries (e.g., C:\local\boost_1_76_0\lib).
+- Go to **Linker > General >** Additional Library Directories and add the path to Boost libraries (e.g.,                C\local\boost_1_76_0\lib).
 
 
 
 4. Build and Run:
 
-Press Ctrl + F5 to build and run the project.
+- Press Ctrl + F5 to build and run the project.
 
-The program will log activity to proxy_log.txt in the project directory.
-
-
+- The program will log activity to proxy_log.txt in the project directory.
 
 
 
@@ -119,7 +115,7 @@ The program will log activity to proxy_log.txt in the project directory.
 
 ### Testing with Postman or Other Tools
 
-You can use Postman or curl to test the server by sending requests to localhost on the port specified in main.cpp. For Linux you can use apachebench to test multiple connection (e.g 1000)
+You can use **Postman** or curl to test the server by sending requests to localhost on the port specified in main.cpp. For Linux, you can use **Apachebench** to test multiple connections (e.g 1000)
 
 ---
 
@@ -132,8 +128,8 @@ The server writes logs with details like request sent and connection number to p
 # Message Fragmentation Library
 ## Overview
 The Message Fragmentation Library is a C++ project that fragments a message into smaller parts and reassembles it, simulating network transmission. It includes:
-   - MessageFragmenter: For splitting a message into fragments of specified sizes.
-   - MessageAssembler: For reassembling fragments back into the original message.
+   - **MessageFragmenter**: For splitting a message into fragments of specified sizes.
+   - **MessageAssembler**: For reassembling fragments back into the original message.
 ---
 
 ## Features
@@ -146,15 +142,17 @@ The Message Fragmentation Library is a C++ project that fragments a message into
  - Compiler: g++ or clang++ with (C++17 or higher).
 
 ### Windows
-- Compiler:Visual Studio with MSVC compiler (C++17 or higher)
+- Compiler: Visual Studio with MSVC compiler (C++17 or higher)
 
 ## Build Instructions
    ### Linux
-   1. Clone the repository
+   1. Clone the repository(If you didn't clone)
+
+   2. Navigate to the project
       ```bash
-      git clone https://github.com/yourusername/message_fragmentation.git
-      cd message_fragmentation
-   2. Run the program
+      cd messageFragmentationLibrary
+
+   4. Run the program
       ```bash
       ./test
 
