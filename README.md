@@ -97,9 +97,9 @@ This project is a TCP Proxy Server built in C++ using Boost.Asio. It supports ha
 
 3. Configure Boost in Visual Studio:
 
-- Go to **Project Properties > C/C++ > General >** Additional Include Directories and add the path to the Boost         headers(e.g., C:\local\boost_1_76_0).
+- Go to **Project Properties > C/C++ > General >** Additional Include Directories and add the path to the Boost headers(e.g., C:\local\boost_1_76_0).
 
-- Go to **Linker > General >** Additional Library Directories and add the path to Boost libraries (e.g.,                C\local\boost_1_76_0\lib).
+- Go to **Linker > General >** Additional Library Directories and add the path to Boost libraries (e.g.,C\local\boost_1_76_0\lib).
 
 
 
