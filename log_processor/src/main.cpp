@@ -5,7 +5,7 @@
 #include "logger_processor.h"
 
 int main() {
-    const std::string logFileName = "/media/ebenezeri/_dev_sda6/Software_assesment/qubitech_interview/log_processor/data/large_log.txt"; // Adjust path as necessary
+    const std::string logFileName = "../data/large_log.txt"; // Adjust path as necessary
     Logger logger("logs.db");
 
     std::ifstream logFile(logFileName);

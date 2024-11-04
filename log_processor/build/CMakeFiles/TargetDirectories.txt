@@ -1,0 +1,3 @@
+/media/ebenezeri/_dev_sda6/Software_assesment/qubitech_interview/log_processor/build/CMakeFiles/log_processor.dir
+/media/ebenezeri/_dev_sda6/Software_assesment/qubitech_interview/log_processor/build/CMakeFiles/edit_cache.dir
+/media/ebenezeri/_dev_sda6/Software_assesment/qubitech_interview/log_processor/build/CMakeFiles/rebuild_cache.dir
